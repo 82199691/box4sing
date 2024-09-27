@@ -1,3 +1,6 @@
+## v0.2
+- 添加boxTool更新检测，添加模块更新检测
+    
 ## v0.1
 - 将使用mihomo内核的Surfing修改为使用sing-box-PuerNya内核的box4sing
 
