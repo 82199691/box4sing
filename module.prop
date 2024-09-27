@@ -1,7 +1,7 @@
 id=box4sing
 name=box4sing
-version=v0.1
-versionCode=20240926
+version=v0.2
+versionCode=20240927
 author=JuYutong
 description=This project is a Magisk 、 Kernelsu and APatch module for sing-box. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) , TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).
 updateJson=https://raw.githubusercontent.com/82199691/box4sing/main/box4sing.json

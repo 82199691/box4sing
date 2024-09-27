@@ -13,8 +13,8 @@ SCRIPTS_PATH="${MOUDLECONFIG_PATH}scripts/"
 COREE_PATH="${MOUDLECONFIG_PATH}sing-box/"
 
 # Toolbox更新
+CURRENT_VERSION="v0.2"
 TOOLBOX_URL="https://raw.githubusercontent.com/82199691/box4sing/main/box4sing/sing-box/Toolbox.sh"
-CURRENT_VERSION="v0.1"
 TOOLBOX_FILE="/data/adb/box/box4sing/Toolbox.sh"
 
 #模块更新
