@@ -115,7 +115,7 @@ update_module() {
     echo "↴"
     echo "正在获取服务器中..."
     module_release=$(curl -s "$GIT_URL")
-    module_version=$(echo "$module_release" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
+    module_version=$(echo "$module_release" | grep '"name"' | sed -E 's/.*"([^"]+)".*/\1/')
     if [ -z "$module_version" ]; then
         echo "获取服务器失败！"
         echo "错误：请确保网络能正常访问 GitHub！"
