@@ -1,7 +1,7 @@
-id=Surfing
-name=Surfing
-version=v6.8.15
-versionCode=1583
-author=M
-description=This project is a Magisk 、 Kernelsu and APatch module for Clash, sing-box, v2ray, and xray, hysteria. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) transparent proxy, TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).实现安卓软路由
-updateJson=https://raw.githubusercontent.com/MoGuangYu/Surfing/main/Surfing.json
+id=box4sing
+name=box4sing
+version=v0.1
+versionCode=20240926
+author=JuYutong
+description=This project is a Magisk 、 Kernelsu and APatch module for sing-box. It supports REDIRECT (TCP only), TPROXY (TCP + UDP) , TUN (TCP + UDP), and a mixed mode proxy with REDIRECT (TCP) + TUN (UDP).
+updateJson=https://raw.githubusercontent.com/82199691/box4sing/main/box4sing.json

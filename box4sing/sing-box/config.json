@@ -1,0 +1,258 @@
+{
+  "log": {
+    "disabled": true,
+    "level": "info",
+    "output": "sing-box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "cloudflare",
+        "address": "tls://1.1.1.1",
+        "detour": "Proxy"
+      },
+      {
+        "tag": "local",
+        "address": "tls://223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "remote",
+        "address": "fakeip"
+      },
+      {
+        "tag": "block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "local"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "local"
+      },
+      {
+        "clash_mode": "Global",
+        "server":"cloudflare"
+      },
+      {
+        "domain_suffix": [
+          ".cn"
+        ],
+        "server": "local"
+      },
+      {
+        "rule_set": "geosite-category-ads-all",
+        "server": "block"
+      },
+      {
+        "rule_set": [
+        "geosite-cn"
+        ],
+        "server": "local"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "remote"
+      }
+    ],
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    },
+    "independent_cache": false,
+    "disable_cache": false,
+    "disable_expire": false,
+    "final": "cloudflare",
+    "strategy": "prefer_ipv4"
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "::",
+      "listen_port": 7080,
+      "sniff": true,
+      "domain_strategy": "prefer_ipv4"
+    },
+   {
+     "type": "tun",
+     "tag": "tun-in",
+     "interface_name": "tun0",
+     "inet4_address": "172.19.0.1/30",
+     "inet6_address": "fdfe:dcba:9876::1/126",
+     "stack": "system",
+     "auto_route": true,
+     "strict_route": true,
+     "sniff": true
+   },
+   {
+     "type": "redirect",
+     "tag": "redirect-in",
+     "listen": "::",
+     "listen_port": 7891,
+     "sniff": true
+   },
+    {
+      "type": "tproxy",
+      "tag": "tproxy-in",
+      "listen": "::",
+      "listen_port": 1536,
+      "sniff": true
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "selector",
+      "tag": "Proxy",
+      "outbounds": [
+        "direct",
+        "block",
+        "auto",
+        "no-auto"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "selector",
+      "tag": "no-auto",
+      "use_all_providers": true
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "use_all_providers": true,
+      "url": "https://www.gstatic.com/generate_204"
+    }
+  ],
+  "outbound_providers": [
+    {
+      "type": "remote",
+      "tag": "Provider1",
+      "path": "./Provider1.json",
+      "download_url": "订阅地址1",
+      "healthcheck_interval": "24h",
+      "download_ua": "sing-box",
+      "download_interval": "24h",
+      "download_detour": "direct"
+    },
+    {
+      "type": "remote",
+      "tag": "Provider2",
+      "path": "./Provider2.yaml",
+      "download_url": "订阅链接2",
+      "healthcheck_interval": "24h",
+      "download_ua": "clash/meta/mihomo",
+      "download_interval": "24h",
+      "download_detour": "Proxy"
+    }
+  ],
+  "route": {
+    "rule_set": [
+{
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-private",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-category-ads-all",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_ip_rule_set/geoip-telegram.srs",
+        "download_detour": "direct"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "geosite-category-ads-all"
+        ],
+        "outbound": "block"
+      },
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          ".cn"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geoip-telegram"
+        ],
+        "outbound": "Proxy"
+      },
+      {
+        "rule_set": [
+          "geoip-cn",
+          "geosite-cn",
+          "geosite-private"
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "auto_detect_interface": true,
+    "final": "Proxy"
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "store_fakeip": true
+    },
+    "clash_api": {
+      "default_mode": "Rule",
+      "external_controller": "0.0.0.0:9999",
+      "external_ui": "/data/adb/box4sing/panel/Meta/"
+    }
+  }
+}
