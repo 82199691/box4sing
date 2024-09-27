@@ -8,22 +8,19 @@
         <img alt="Downloads" src="https://img.shields.io/github/downloads/MoGuangYu/Surfing/v6.8.15/total?label=Download@v6.8.15&labelColor=00b56a&logo=git&logoColor=white">
     </a>
 </div>
-#
-
-本项目为 Clash、sing-box、v2ray、xray、hysteria 的 [Magisk](https://github.com/topjohnwu/Magisk) 、 [Kernelsu](https://github.com/tiann/KernelSU) 、 [APatch](https://github.com/bmax121/APatch) 模块。支持 REDIRECT（仅 TCP）、TPROXY（TCP + UDP）透明代理，支持 TUN（TCP + UDP）亦可 REDIRECT（TCP）+ TUN（UDP） 混合模式代理。
+#本项目为 Clash、sing-box、v2ray、xray、hysteria 的 [Magisk](https://github.com/topjohnwu/Magisk) 、 [Kernelsu](https://github.com/tiann/KernelSU) 、 [APatch](https://github.com/bmax121/APatch) 模块。支持 REDIRECT（仅 TCP）、TPROXY（TCP + UDP）透明代理，支持 TUN（TCP + UDP）亦可 REDIRECT（TCP）+ TUN（UDP） 混合模式代理。
 
   基于上游为集成式一体服务、即刷即用   
-  此适用以下人群：
-  - 懒癌
-  - 小白
 
   项目主题及配置仅围绕 [Sing-box](https://github.com/PuerNya/sing-box)  
 
-  本模块需在 Magisk/Kernelsu 环境进行使用，如果你不知道如何配置所需环境，你可能需要像 ClashForAndroid、v2rayNG、surfboard、SagerNet、AnXray 等应用程序。
+  本模块需在 Magisk/Kernelsu 环境进行使用。
 
-# Surfing用户声明及免责
+# box4sing用户声明及免责
 
-欢迎使用 在使用本项目前，请您仔细阅读并理解以下声明及免责条款。通过使用本项目，即表示您同意接受以下条款和条件。以下简称 **Surfing**
+欢迎使用 在使用本项目前，请您仔细阅读并理解以下声明及免责条款。通过使用本项目，即表示您同意接受以下条款和条件。
+
+以下简称 **box4sing**
 
 ## 免责声明
 
@@ -53,7 +50,7 @@
 
 ## 安装
 
-- 从 [Release](https://github.com/MoGuangYu/Surfing/releases) 页下载模块压缩包，然后通过 Magisk Manager 或 KernelSU Manager 或 APatch 安装
+- 从 [Release](https://github.com/82199691/box4sing/releases) 页下载模块压缩包，然后通过 Magisk Manager 或 KernelSU Manager 或 APatch 安装
 - 各版本变化 [📲日志.log](changelog.md)
 
 ## 卸载
@@ -61,6 +58,8 @@
  - 从 Magisk Manager 、Kernelsu Manager 、APatch 应用卸载本模块即可 
 
 ## Wiki
+
+#
 
 <details>
 <summary>1. 首次使用</summary>
@@ -78,24 +77,25 @@
 
 <details>
 <summary>2. 控制运行</summary>
+​	可通过Magisk开关进行 关闭/开启 控制运行服务实时生效
 
-- 可通过Magisk开关进行 关闭/开启 控制运行服务实时生效
+#
 
 <details>
 <summary>3. 配置&&规则集</summary>
 
-配置教程参阅
+​	配置教程参阅
 
-> sing-box-puer [Wiki](https://puer-sing-box.pages.dev/zh/)  
+> ​	sing-box-puer [Wiki](https://puer-sing-box.pages.dev/zh/)  
 >
-> sing-box [Wiki](https://sing-box.sagernet.org/zh) 
+> ​	sing-box [Wiki](https://sing-box.sagernet.org/zh) 
 
-SingBox 规则
+​	SingBox 规则
 
-> 用于路由规则匹配，实现精准分流，更新会一直指向最新版本，因此每个月只需更新一次文件即可
->
-> SingBox 的规则集有二进制和源文件的两种，.srs 是二进制文件，文件小，推荐使用
->
+​		用于路由规则匹配，实现精准分流，更新会一直指向最新版本，因此每个月只需更新一次文件即可
+
+​		SingBox 的规则集有二进制和源文件的两种，.srs 是二进制文件，文件小，推荐使用
+
 > 推荐两个 GitHub 的两个规则集
 >
 > MetaCubeX 维护的规则集：[点击访问](https://github.com/MetaCubeX/meta-rules-dat/tree/sing/)
@@ -106,17 +106,14 @@ SingBox 规则
 
 <details>
 <summary>4. 后续更新</summary>
+​	如果你全部使用默认配置，更新将是无感
 
-- 如果你全部使用默认配置，更新将是无感
-- 支持在客户端中在线更新模块，更新后无须重启，模块开关控制 启用/关闭 ~~会临时失效，仍需重启~~ 建议使用 Toolbox 更新
-- 更新时 sing-box config.json 配置文件会备份至
-   - `/data/adb/box4sing/sing-box/config.json.bak`
-- 更新时会备份旧文件用户配置，至
-   - `/data/adb/box4sing/scripts/box.config.bak`
-- 更新模块时不包含：
-   - Geo数据库文件
-   - bin文件
-   - Web资源
+​	支持在客户端中在线更新模块，更新后无须重启，模块开关控制 启用/关闭 ~~会临时失效，仍需重启~~ 建议使用 Toolbox 更新
+
+​	更新时 sing-box config.json 配置文件会备份至	`/data/adb/box4sing/sing-box/config.json.bak`
+
+
+- 更新时会备份旧文件用户配置至	`/data/adb/box4sing/scripts/box.config.bak`
 
 > Ps：主要跟随上游更新，及下发一些配置
 
@@ -194,12 +191,14 @@ SingBox 规则
 <div align="center">
   <a href="https://github.com/MoGuangYu/Surfing"><strong>Surfing</strong></a>
 </div>
+<div align="center">
+  <a href="https://github.com/PuerNya/sing-box"><strong>Sing-box-PuerNya</strong></a>
+</div>
+
 
 <div align="center">
   <a href="https://github.com/MetaCubeX"><strong>MetaCubeX</strong></a>
 </div>
-
-
 <div align="center">
   <a href="https://github.com/Loyalsoldier"><strong>Loyalsoldier</strong></a>
 </div>

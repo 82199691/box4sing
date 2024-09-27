@@ -756,6 +756,6 @@ enable_updates() {
     fi
 }
 
-# check_version
-# update_module
+check_version
+update_module
 show_menu
