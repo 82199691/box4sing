@@ -8,6 +8,26 @@
         <img alt="Downloads" src="https://img.shields.io/github/downloads/MoGuangYu/Surfing/v6.8.15/total?label=Download@v6.8.15&labelColor=00b56a&logo=git&logoColor=white">
     </a>
 </div>
+## 致谢
+
+<a href="https://github.com/CHIZI-0618">
+
+  <p align="center">
+    <img src="https://github.com/CHIZI-0618.png" width="100" height="100" alt="CHIZI-0618">
+    <br>
+    <strong>CHIZI-0618</strong>
+  </p>
+
+</a><a href="https://github.com/MoGuangYu">
+
+  <p align="center">
+    <img src="https://github.com/MoGuangYu.png" width="100" height="100" alt="CHIZI-0618">
+    <br>
+    <strong>MoGuangYu</strong>
+  </p>
+
+</a>
+
 #本项目为 Clash、sing-box、v2ray、xray、hysteria 的 [Magisk](https://github.com/topjohnwu/Magisk) 、 [Kernelsu](https://github.com/tiann/KernelSU) 、 [APatch](https://github.com/bmax121/APatch) 模块。支持 REDIRECT（仅 TCP）、TPROXY（TCP + UDP）透明代理，支持 TUN（TCP + UDP）亦可 REDIRECT（TCP）+ TUN（UDP） 混合模式代理。
 
   基于上游为集成式一体服务、即刷即用   
@@ -157,6 +177,8 @@
 - 开启热点让其它设备连接即可
 
 > 其它设备若访问控制台后端，只需 (http://当前WiFi网关:9999/ui)
+>
+> </details>
 
 ---
 
@@ -165,38 +187,15 @@
 </a>
 
 
-## 致谢
 
-<a href="https://github.com/CHIZI-0618">
 
-  <p align="center">
-    <img src="https://github.com/CHIZI-0618.png" width="100" height="100" alt="CHIZI-0618">
-    <br>
-    <strong>CHIZI-0618</strong>
-  </p>
-</a><a href="https://github.com/MoGuangYu">
-
-  <p align="center">
-    <img src="https://github.com/MoGuangYu.png" width="100" height="100" alt="CHIZI-0618">
-    <br>
-    <strong>MoGuangYu</strong>
-  </p>
-
-</a>
-
-<div align="center">
-  <a href="https://github.com/CHIZI-0618/box4magisk"><strong>box4magisk</strong></a>
-</div>
 
 <div align="center">
   <a href="https://github.com/MoGuangYu/Surfing"><strong>Surfing</strong></a>
 </div>
 <div align="center">
   <a href="https://github.com/PuerNya/sing-box"><strong>Sing-box-PuerNya</strong></a>
-</div>
-
-
-<div align="center">
+</div><div align="center">
   <a href="https://github.com/MetaCubeX"><strong>MetaCubeX</strong></a>
 </div>
 <div align="center">
@@ -205,3 +204,12 @@
 <div align="center">
   <p> > 感谢为本项目的实现提供了宝贵的基础 < </p>
 </div>
+
+
+
+
+
+
+
+
+
