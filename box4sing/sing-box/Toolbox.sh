@@ -224,7 +224,7 @@ show_menu() {
         echo "================"
         echo "$CURRENT_VERSION" 
         echo "================"
-        echo "box4sing-Menu"
+        echo "  box4sing-Menu"
         echo "================"
         echo "1. 重载配置"
         echo "2. 清空数据库缓存"
@@ -235,7 +235,7 @@ show_menu() {
         echo "7. 禁用/启用 更新模块"
         echo "8. 项目地址"
         echo "9. Exit"
-        echo "————————————————"
+        echo "——————"
         read -r choice
         case $choice in
             1)
@@ -512,7 +512,7 @@ update_geoip() {
         last_update=$(date -d "@$(cat $RULES_UPDATE_TIMESTAMP)" +"%Y-%m-%d %H:%M:%S")
         echo "距离上次更新是: $last_update"
     fi
-    echo "此操作会从 GitHub 拉取最新geoip规则，是否更新？回复y/n"
+    echo "此操作会从 GitHub 拉取最新全部规则，是否更新？回复y/n"
     read -r confirmation
     if [ "$confirmation" != "y" ];then
         echo "↴"
@@ -562,7 +562,7 @@ update_geosite() {
         last_update=$(date -d "@$(cat $RULES_UPDATE_TIMESTAMP)" +"%Y-%m-%d %H:%M:%S")
         echo "距离上次更新是: $last_update"
     fi
-    echo "此操作会从 GitHub 拉取最新geosite规则，是否更新？回复y/n"
+    echo "此操作会从 GitHub 拉取最新全部规则，是否更新？回复y/n"
     read -r confirmation
     if [ "$confirmation" != "y" ];then
         echo "↴"
