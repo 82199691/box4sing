@@ -17,13 +17,14 @@
     <br>
     <strong>CHIZI-0618</strong>
   </p>
+</a>
 
-</a><a href="https://github.com/MoGuangYu">
+<a href="https://github.com/MoGuangYu">
 
   <p align="center">
     <img src="https://github.com/MoGuangYu.png" width="100" height="100" alt="CHIZI-0618">
     <br>
-    <strong>MoGuangYu</strong>
+    <strong>CHIZI-0618</strong>
   </p>
 
 </a>
@@ -204,7 +205,6 @@
 <div align="center">
   <p> > 感谢为本项目的实现提供了宝贵的基础 < </p>
 </div>
-
 
 
 
