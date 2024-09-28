@@ -68,11 +68,11 @@
       "inet4_range": "198.18.0.0/15",
       "inet6_range": "fc00::/18"
     },
-    "independent_cache": false,
+    "independent_cache": true,
     "disable_cache": false,
     "disable_expire": false,
     "final": "cloudflare",
-    "strategy": "prefer_ipv4"
+    "strategy": "ipv4_only"
   },
   "inbounds": [
     {
@@ -141,8 +141,7 @@
     {
       "type": "urltest",
       "tag": "auto",
-      "use_all_providers": true,
-      "url": "https://www.gstatic.com/generate_204"
+      "use_all_providers": true
     }
   ],
   "outbound_providers": [
@@ -228,17 +227,17 @@
       },
       {
         "rule_set": [
-          "geoip-telegram"
-        ],
-        "outbound": "Proxy"
-      },
-      {
-        "rule_set": [
           "geoip-cn",
           "geosite-cn",
           "geosite-private"
         ],
         "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geoip-telegram"
+        ],
+        "outbound": "Proxy"
       }
     ],
     "auto_detect_interface": true,
