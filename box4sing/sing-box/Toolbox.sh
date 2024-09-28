@@ -224,18 +224,18 @@ show_menu() {
         echo "================"
         echo "$CURRENT_VERSION" 
         echo "================"
-        echo "  box4sing-Menu"
+        echo "box4sing-Menu"
         echo "================"
         echo "1. 重载配置"
         echo "2. 清空数据库缓存"
         echo "3. 更新Web面板"
-        echo "4. 更新Apps路由规则"
+        echo "4. 更新规则集"
         echo "5. Web面板访问入口整合"
         echo "6. 整合Magisk更新状态"
         echo "7. 禁用/启用 更新模块"
         echo "8. 项目地址"
         echo "9. Exit"
-        echo "——————"
+        echo "————————————————"
         read -r choice
         case $choice in
             1)
